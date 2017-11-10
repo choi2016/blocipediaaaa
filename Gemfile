@@ -24,6 +24,10 @@
    gem 'web-console', '~> 2.0'
  end
  
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
  # Use Puma as the app server
  gem 'puma', '~> 3.0'
  # Use SCSS for stylesheets
@@ -40,7 +44,7 @@
  
  gem 'thor', '0.19.1'
  gem 'bootstrap-sass'
-
+ gem 'bcrypt'
 
  group :development do
    gem 'listen', '~> 3.0.5'
