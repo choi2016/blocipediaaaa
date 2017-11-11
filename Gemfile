@@ -21,7 +21,7 @@
  group :development do
    # Use sqlite3 as the development database for Active Record
    gem 'sqlite3'
-   gem 'web-console', '~> 2.0'
+   gem 'web-console'#, '~> 2.0'
  end
  
 group :test do
@@ -45,7 +45,7 @@ end
  gem 'thor', '0.19.1'
  gem 'bootstrap-sass'
  gem 'bcrypt'
-
+ gem 'devise'
  group :development do
    gem 'listen', '~> 3.0.5'
  end
