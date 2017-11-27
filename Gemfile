@@ -46,6 +46,8 @@ end
  gem 'bootstrap-sass'
  gem 'bcrypt'
  gem 'devise'
+ gem 'pundit'
+
  group :development do
    gem 'listen', '~> 3.0.5'
  end
