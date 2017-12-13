@@ -13,6 +13,7 @@ class ChargesController < ApplicationController
      )
 
      flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
+     current_user.premium!
      redirect_to wikis_path
 
      rescue Stripe::CardError => e
@@ -23,7 +24,7 @@ class ChargesController < ApplicationController
   def new
      @stripe_btn_data = {
        key: "#{ Rails.configuration.stripe[:publishable_key] }",
-       description: "BigMoney Membership - #{current_user.name}",
+       description: "BigMoney Membership - #{current_user.email}",
        amount: 15_00
      }
   end

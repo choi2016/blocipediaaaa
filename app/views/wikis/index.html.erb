@@ -1,13 +1,12 @@
 <h1>All Wikis</h1>
 
-<% if user_is_authorized_to_create? %>
-    <div class="row">
-        <div class="col-md-4">
-            <%= link_to "Make a New Wiki", new_wiki_path, class: 'btn btn-success' %>
-        </div>
-    </div>
-<% end %>
+<div class="row">
+  <div class="col-md-4">
+    <%= link_to "Create Wiki", new_wiki_path, class: 'btn btn-success' %>
+  </div>
+</div>
 
+<% if current_user.admin? || current_user.premium? %>
 <% @wikis.each do |wiki| %>
     <div class="media">
         <div class="media-body">
@@ -16,4 +15,5 @@
             </h4>
         </div>
     </div>
+<% end %>
 <% end %>
