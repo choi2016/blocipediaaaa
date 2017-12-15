@@ -6,14 +6,15 @@
   </div>
 </div>
 
-<% if current_user.admin? || current_user.premium? %>
 <% @wikis.each do |wiki| %>
     <div class="media">
         <div class="media-body">
-            <h4 class="media-heading">
-                <%= link_to wiki.title, wiki %>
-            </h4>
+            <% if current_user.admin? || current_user.premium? || wiki.private == false %>
+
+                <h4 class="media-heading">
+                    <%= link_to wiki.title, wiki %>
+                </h4>
+            <% end %>
         </div>
     </div>
-<% end %>
 <% end %>
