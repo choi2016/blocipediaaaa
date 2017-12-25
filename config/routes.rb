@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :wikis
+  get 'collaborators/create'
+
+  get 'collaborators/destroy'
+
+  resources :wikis do
+    resources :collaborators, only: [:create, :destroy]
+  end
+
   resources :charges, only: [:new, :create]
   resources :downgrade, only: [:destroy]
 
